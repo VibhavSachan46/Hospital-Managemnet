@@ -100,6 +100,7 @@ const Doctor = () => {
                   <th className="p-3 border border-gray-600">Age</th>
                   <th className="p-3 border border-gray-600">Treatment</th>
                   <th className="p-3 border border-gray-600">Actions</th>
+                  <th className="p-3 border border-gray-600">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -110,12 +111,29 @@ const Doctor = () => {
                     <td className="p-3 border border-gray-600">{patient.age}</td>
                     <td className="p-3 border border-gray-600">{patient.treatment}</td>
                     <td className="p-3 border border-gray-600">
-                      <button
-                        className="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded"
-                        onClick={() => setModal({ open: true, patientId: patient.id, newTreatment: patient.treatment })}
-                      >
-                        Update
-                      </button>
+                      {
+                        patient.isActive == true && (
+                          <button
+                            className="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded"
+                            onClick={() => setModal({ open: true, patientId: patient.id, newTreatment: patient.treatment })}
+                          >
+                            Update
+                          </button>
+                        )
+                      }
+                    </td>
+                    <td className="p-3 border border-gray-600  ">
+                      {
+                        patient.isActive == true ? (
+                          <div>
+                            Active
+                          </div>
+                        ) : (
+                          <div>
+                            Not Active
+                          </div>
+                        )
+                      }
                     </td>
                   </tr>
                 ))}

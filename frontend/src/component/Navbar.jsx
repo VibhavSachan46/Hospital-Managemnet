@@ -11,10 +11,10 @@ const Navbar = () => {
     // const navigate = useNavigate();
     const [provider, setProvider] = useState(null);
 
-    useEffect(() => {
-        console.log("Current account:", account);
-        console.log("Contract 2 is ", contract);
-    }, [account]);
+    // useEffect(() => {
+    //     // console.log("Current account:", account);
+    //     // console.log("Contract 2 is ", contract);
+    // }, [account]);
 
     const connectWallet = async () => {
         if (window.ethereum) {
@@ -34,7 +34,7 @@ const Navbar = () => {
                 const contractInstance = new ethers.Contract(contractAddress, Medical.abi, signer);
 
                 setContract(contractInstance);
-                console.log("contract os ", contractInstance);
+                // console.log("contract os ", contractInstance);
 
                 toast.success("Wallet connected successfully!");
             } catch (error) {

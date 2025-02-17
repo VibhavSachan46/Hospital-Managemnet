@@ -18,10 +18,10 @@ const ActivePatients = ({ provider }) => {
             setLoading(true);
             try {
                 const patientIds = await contract.getActivePatients();
-                console.log("Patient id ", patientIds);
+                // console.log("Patient id ", patientIds);
 
                 const inactivePatientIds = await contract.getInactivePatients();
-                console.log("inactivePatient id ", inactivePatientIds);
+                // console.log("inactivePatient id ", inactivePatientIds);
 
                 const patientDetails = [];
 

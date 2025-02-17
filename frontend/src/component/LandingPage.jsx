@@ -69,8 +69,8 @@ const LandingPage = () => {
             }
 
             const doctor = await contract.doctors(account)
-            console.log("Doctor  hniubh", doctor)
-            console.log("Doctor is", doctor.name)
+            // console.log("Doctor  hniubh", doctor)
+            // console.log("Doctor is", doctor.name)
 
             if (doctor.name == "") {
                 toast.error("You are not a registered doctor");

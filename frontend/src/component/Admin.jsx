@@ -18,7 +18,7 @@ const Admin = () => {
             if (!contract) return;
             try {
                 const patientList = await contract.getActivePatients();
-                console.log("Patients arte", patientList);
+                // console.log("Patients arte", patientList);
                 setPatients(patientList);
 
 

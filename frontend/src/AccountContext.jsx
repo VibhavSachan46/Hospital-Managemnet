@@ -9,8 +9,8 @@ export const AccountProvider = ({ children }) => {
     const [contract, setContract] = useState(null);
 
     useEffect(() => {
-        console.log("Account updated:", account);
-        console.log("Contract is ", contract);
+        // console.log("Account updated:", account);
+        // console.log("Contract is ", contract);
         
         if (account) {
             localStorage.setItem("Medicalaccount", account);

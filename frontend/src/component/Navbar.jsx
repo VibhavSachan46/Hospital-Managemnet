@@ -57,7 +57,7 @@ const Navbar = () => {
         <div>
             <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg py-2 px-16 flex justify-between items-center">
                 <a href="/">
-                    <h1 className="text-2xl font-extrabold text-white">🏥 HospitalChain</h1>
+                    <h1 className="text-2xl font-extrabold text-white">🏥HospitalChain</h1>
                 </a>
                 <p className=''>
                     <span className='text-2xl text-blue-400'>Account:   </span>

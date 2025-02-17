@@ -80,7 +80,28 @@ const LandingPage = () => {
             }
         } catch (error) {
             console.error("Error checking doctor:", error);
-            toast.error("Failed to verify doctor. Please try again.");
+            toast.error("Failed to login doctor. Please try again.");
+        }
+    }
+
+    const toRegisterDoictor = async () => {
+        if (!contract) {
+            toast.error("Smart contract not loaded")
+            return
+        }
+
+        try {
+            const managerAddress = await contract.manager()
+
+            if (managerAddress.toLowerCase() === account.toLowerCase()) {
+                toast.error("Manager cannot register as doctor");
+                return
+                
+            } else {
+                navigate("/register-doctor");
+            }
+        } catch (error) {
+            toast.error("Failed to register")
         }
     }
 
@@ -112,7 +133,7 @@ const LandingPage = () => {
                             </button>
                             <button
                                 className="bg-purple-500 px-6 py-3 rounded-lg shadow-md hover:bg-purple-600 transition text-white font-semibold"
-                                onClick={() => navigate("/register-doctor")}
+                                onClick={toRegisterDoictor}
                             >
                                 Register as Doctor
                             </button>
@@ -123,7 +144,7 @@ const LandingPage = () => {
 
             {/* Footer */}
             <footer className="text-center py-6 bg-gray-950 text-gray-400">
-                <p>&copy; 2024 HospitalChain. All rights reserved.</p>
+                <p>&copy; 2025 HospitalChain. All rights reserved.</p>
             </footer>
         </div>
     );

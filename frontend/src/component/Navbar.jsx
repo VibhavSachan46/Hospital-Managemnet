@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useAccount } from "../AccountContext";
 import { ethers } from 'ethers';
 import toast from "react-hot-toast";
-// import { useNavigate } from "react-router-dom";
 import Medical from "../artifacts/contracts/Medical.sol/Medical.json";
 
 
@@ -35,8 +34,8 @@ const Navbar = () => {
                 const contractInstance = new ethers.Contract(contractAddress, Medical.abi, signer);
 
                 setContract(contractInstance);
-                console.log("contract os ",contractInstance);
-                
+                console.log("contract os ", contractInstance);
+
                 toast.success("Wallet connected successfully!");
             } catch (error) {
                 console.error("Wallet connection error:", error);
@@ -57,7 +56,9 @@ const Navbar = () => {
     return (
         <div>
             <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg py-2 px-16 flex justify-between items-center">
-                <h1 className="text-2xl font-extrabold text-white">🏥 HospitalChain</h1>
+                <a href="/">
+                    <h1 className="text-2xl font-extrabold text-white">🏥 HospitalChain</h1>
+                </a>
                 <p className=''>
                     <span className='text-2xl text-blue-400'>Account:   </span>
                     <span className='text-xl text-gray-100'>

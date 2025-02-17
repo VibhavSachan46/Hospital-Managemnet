@@ -36,8 +36,8 @@ const RegisterDoctor = () => {
                 setSpecialization("");
 
             } catch (error) {
-                console.error("Registration failed:", error);
-                toast.error("Failed to register doctor.");
+                console.error("Registration failed:", error.reason);
+                toast.error(`${error.reason}`);
             }
 
         }
